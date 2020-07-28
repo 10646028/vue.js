@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <!-- vue實例的掛載點-->
     <div id='app'>
-        <p>使用鬍子語法:<span v-pre>{{ message }}</span></p>
-        {{numbers.map(x => x*2)}}
-        <h1>{{message}}</h1>
-        <p>{{price*discount}}</p>
-        <p v-html="context"></p>
-        <a :href="link">連接</a>
+        <input v-model='yourname'>
+        <button v-on:click='sayHi'>button</button>
     </div>
     <!-- vue的CDN-->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -22,15 +20,16 @@
     <script>
         new Vue({
             el: '#app',
-            data:{
-                message:'hello word!',
-                numbers:[1, 4, 9, 16],
-                price: 1000,
-                discount: 0.5,
-                context: "<h3>subtitle</h3>",
-                link: "http://www.google.com"
+            data: {
+                yourname: '輸入名稱'
+            },
+            methods: {
+                sayHi() {
+                    alert(`Hi, ${this.yourname}，歡迎使用Vue.js`)
+                }
             }
         })
     </script>
 </body>
+
 </html>
