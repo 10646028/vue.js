@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id='app'>
+        <ul>
+            <li v-for="(item, index) in list">
+                index: {{item.id}}, name: {{item.nama}}
+                <!--item指的是 在"list"中的每一項item，.id代表抓出list裡id的資料-->
+            </li>
+        </ul>
+        
+        <ul>
+            <li v-for="(item, key, index) in list2">
+                index: {{item.id}}, key: {{key}}, name: {{item.nama}}
+                <!--key指的是 在"list"中的每一項item的鍵值-->
+            </li>
+        </ul>   
+
+        <ul>
+                <li v-for="(item, key, index) in list3">
+                    index: {{index}}, key: {{key}}, name: {{item.nama}}
+                    <!--key指的是 在"list"中的每一項item的鍵值-->
+                    <!--index指的是 在"list"中的順序(0~n)-->
+                </li>
+        </ul> 
+
+        <div v-if="loading">載入中...</div>
+        <div v-else>載入完畢!</div>
+        
+    </div>
+    <script src="03.js"></script>
+</body>
+</html>

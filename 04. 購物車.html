@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="04.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <div class="container">
+            <div class='nav'>
+                <ul>
+                    <li class='item_deatil'>商品</li>
+                    <li class='price'>單價</li>
+                    <li class='count'>數量</li>
+                    <li class='total'>總計</li>
+                    <li class='operate'>操作</li>
+                </ul>
+            </div>
+            <div class='item_container' v-for='(item, index) in itemList':key='item.id'>
+                <div class='item'>
+                    <ul>
+                        <li class='item_detail'>
+                            <img v-bind:src="item.imgUrl">
+                        </li>
+                        <li class='item_name'> {{item.itemName}} </li>
+                        <li class='item_price'> {{item.price}} </li>
+                        <li class='item_count'><button>-</button> {{item.count}} <button>+</button></li>                        
+                        <li class='item_total'> {{item.price*item.count}}</li>
+                        <li class='item_operate'><button>刪除</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="04.js"></script>
+</body>
+</html>
